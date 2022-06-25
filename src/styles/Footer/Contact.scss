@@ -7,17 +7,16 @@ $hoverColor: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
+  padding: 40px;
   border-bottom: 1px solid #ffffff;
   color: $white;
 
 
   &__content {
     display: grid;
-    grid-template-columns: 1fr 1.2fr .8fr 0.8fr 1fr;
+    grid-template-columns: 1fr 1.2fr .6fr 1fr 1fr;
     grid-gap: 20px;
-    align-items: start;
-    justify-content: space-between;
+    justify-items: stretch;
 
     &__logo {
       flex: 1;
@@ -62,7 +61,7 @@ $hoverColor: #ffffff;
     }
 
     &__shop {
-      flex: .8;
+      flex: .6;
       display: flex;
       flex-direction: column;
 
@@ -86,7 +85,7 @@ $hoverColor: #ffffff;
     }
 
     &__sotSet {
-      flex: 1;
+      flex: 2;
 
       h3 {
         padding-bottom: 10px;
@@ -108,6 +107,7 @@ $hoverColor: #ffffff;
       &__sets {
         display: flex;
         align-items: center;
+        justify-content: space-between;
       }
     }
 
@@ -115,6 +115,8 @@ $hoverColor: #ffffff;
       flex: 1;
       display: flex;
       flex-direction: column;
+      padding-left: 1rem;
+
 
       h3 {
         font-weight: 500;
@@ -143,7 +145,6 @@ $hoverColor: #ffffff;
         align-items: center;
         justify-content: start;
 
-
         svg {
           margin-right: 8px;
         }
@@ -163,8 +164,9 @@ $hoverColor: #ffffff;
 
 @media (max-width: 540px) {
   .contact{
+    padding: 0 5px;
     &__content{
-      padding: 0 20px;
+      padding: 0 10px;
       display: grid;
       grid-template-columns: 1fr;
       &__buyers{

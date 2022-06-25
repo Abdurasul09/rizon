@@ -17,27 +17,25 @@ const Advertising = () => {
     useEffect(() => {
         api('/abc')
             .then(res => setAbc(res.data))
-    },[])
+    }, [])
     return (
         <section className='advertising'>
-            <div className="container">
-                <div className="advertising__content">
-                    <Slider {...settings}>
-                        {abc.results?.map(el => (
-                            <div className="hover12 column" key={el.id}>
-                                <div>
-                                    <figure>
-                                        <img
-                                            alt='banner image'
-                                            src={el.photo}
-                                        />
-                                    </figure>
-                                </div>
+            <div className="advertising__content">
+                <Slider {...settings}>
+                    {abc.results?.map(el => (
+                        <div className="hover12 column" key={el.id}>
+                            <div>
+                                <figure>
+                                    <img
+                                        alt='banner image'
+                                        src={el.photo}
+                                    />
+                                </figure>
                             </div>
+                        </div>
 
-                        ))}
-                    </Slider>
-                </div>
+                    ))}
+                </Slider>
             </div>
         </section>
     );

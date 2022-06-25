@@ -33,6 +33,12 @@ a{
   text-decoration: none;
   margin: 0 !important;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+ .container{
+   padding: 0 40px;
+ }
+ //@media (max-width: 520px){
+ //  .container{
+ //    padding: 0 1px;
+ //  }
+ //}
+

@@ -1,7 +1,7 @@
 $backgroundFooter: #000016;
 $textColor: rgb(160, 174, 192);
 .footer{
-  padding: 20px 0;
+  padding: 20px 40px;
   background: $backgroundFooter;
   color: $textColor;
 
@@ -18,5 +18,14 @@ $textColor: rgb(160, 174, 192);
   }
   svg{
     font-size: 19px;
+  }
+}
+
+@media (max-width: 512px){
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px;
   }
 }

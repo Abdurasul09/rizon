@@ -3,8 +3,6 @@ import Contact from "./Footer/Contact";
 import {
     AppBar,
     Badge,
-    Button,
-    Container,
     Link,
     ThemeProvider,
     Switch,
@@ -141,13 +139,12 @@ const Layout = ({title, children, description}) => {
 
 
         return (
-            <div>
+            <>
                 <Head>
                     <title>{title ? `${title} -Интернет магазин || One click` : "Интернет магазин || One click"}</title>
                     {description && <meta name="description" content={description}/>}
                     <link rel="icon" href="/images/logo.svg"/>
                 </Head>
-
                 <ThemeProvider theme={theme}>
                     <CssBaseline/>
                     <AppBar
@@ -213,14 +210,14 @@ const Layout = ({title, children, description}) => {
                                 </NextLink>
                                 {user ? (
                                     <>
-                                        <Button
+                                        <button
                                             className={classes.navbarBtn}
                                             aria-controls="simple-menu"
                                             aria-haspopup="true"
                                             onClick={loginClickHandler}
                                         >
                                             {user.username}
-                                        </Button>
+                                        </button>
                                         <Menu
                                             id="basic-menu"
                                             anchorEl={anchorEl}
@@ -263,9 +260,9 @@ const Layout = ({title, children, description}) => {
                             </div>
                         </Toolbar>
                     </AppBar>
-                    <Container>
+                    <div className='container'>
                         {children}
-                    </Container>
+                    </div>
                     <Contact/>
                     <Categories active={menuActive} setActive={setMenuActive}/>
                     <SearchModal active={modalActive} setActive={setModalActive}>
@@ -370,7 +367,7 @@ const Layout = ({title, children, description}) => {
                     {/*    )}*/}
                     {/*</div>*/}
                 </ThemeProvider>
-            </div>
+            </>
         );
     }
 ;

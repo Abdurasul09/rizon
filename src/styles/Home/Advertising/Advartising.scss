@@ -1,26 +1,19 @@
-
 .advertising {
-  //background: #ffffff;
   margin-top: 5.5em;
-
   &__content {
     .hover12 figure {
       background: #000000;
     }
-
     .hover12 figure img {
       opacity: 1;
       -webkit-transition: .3s ease-in-out;
       transition: .3s ease-in-out;
     }
-
     .hover12 figure:hover img {
       opacity: .7;
     }
-
     .slick-slider {
       border-radius: 10px;
-
       .slick-next {
         position: absolute !important;
         right: 80px !important;
@@ -109,7 +102,13 @@
   }
 }
 
-
+@media (max-width: 912px){
+  .advertising__content .slick-slider .slick-list {
+    overflow: hidden;
+    height: 350px;
+    z-index: 999 !important;
+  }
+}
 
 @media (max-width: 540px) {
   .advertising {

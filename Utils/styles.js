@@ -3,13 +3,17 @@ import {alpha} from "@mui/material/styles";
 
 const useStyle = makeStyles((theme) => ({
     navbar: {
-        // background: 'linear-gradient(45deg, #1cb5e0 30%, #021b79 90%)',
         backgroundColor: " #000016",
+        padding: '0 15px',
         '& a': {
             color: '#ffffff',
             marginLeft: 10,
         },
         zIndex: 999,
+        [theme.breakpoints.down('xs')]: {
+            padding: 0,
+        },
+
     },
     layoutSearchIcon: {
         display: "none",
@@ -165,7 +169,11 @@ const useStyle = makeStyles((theme) => ({
     },
 
     navbarBtn: {
-        color: "#fff",
+        border:'none',
+        background: 'none',
+        fontSize: '1rem',
+        fontWeight: 'bold',
+        color:'white',
         textTransform: "initial",
     },
     step: {
