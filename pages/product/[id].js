@@ -8,7 +8,10 @@ import {
     IconButton,
     Grid,
     List,
-    Typography
+    Typography,
+    Card,
+    CardActionArea,
+    CardMedia, ListItem
 } from "@material-ui/core";
 import {useDispatch} from "react-redux";
 import api from "../../api/globalApi";
@@ -23,8 +26,9 @@ import Modal from "../../src/components/Ocno";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import Buttons from "../../src/components/Common/Buttons/Buttons";
+import Buttons from "../../src/components/Common/Buttons";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import Link from "next/link";
 
 const ProductScreen = ({product}) => {
     const classes = useStyle();
@@ -35,17 +39,27 @@ const ProductScreen = ({product}) => {
     const [size, setSize] = useState([])
     const [modalActive, setModalActive] = useState(false)
     const {enqueueSnackbar, closeSnackbar} = useSnackbar();
+    const [recProducts, setRecProducts] = useState()
+
+    console.log(product.category_id)
+    console.log(recProducts)
 
 
     const sendUrl = `https://mui.com/store/previews/onepirate/`
 
-    console.log('currentProduct', currentProduct)
-    console.log('product', product)
-    console.log(currentProduct)
 
+    const getRecommendsProducts = async () => {
+        try {
+            const res = await api.get(`/products?category_id=${product.category_id}`)
+            setRecProducts(res.data)
+        }catch (e){
+            console.log(e)
+        }
+    }
     useEffect(() => {
         if (!currentProduct) return
         setCartProduct(currentProduct)
+        getRecommendsProducts()
     }, [size])
 
     useEffect(() => {
@@ -61,7 +75,7 @@ const ProductScreen = ({product}) => {
 
     const buy = () => {
         closeSnackbar();
-        if (!size) {
+        if (size) {
             enqueueSnackbar("Выберите размер", {variant: 'error'})
             return
         }
@@ -81,6 +95,10 @@ const ProductScreen = ({product}) => {
             console.log(e)
         }
     }
+
+
+
+
     return (
         <Layout
             title={product.title}
@@ -107,9 +125,9 @@ const ProductScreen = ({product}) => {
                                                 <List key={idx}>
                                                     <Image
                                                         src={item.image}
-                                                        width={78}
+                                                        width={90}
                                                         alt={item.title}
-                                                        height={100}
+                                                        height={120}
                                                         onClick={() => {
                                                             setClickedImg(idx)
                                                         }}
@@ -133,18 +151,17 @@ const ProductScreen = ({product}) => {
                                         <h1>
                                             Описание
                                         </h1>
-                                        {/*<div*/}
-                                        {/*    dangerouslySetInnerHTML={{*/}
-                                        {/*        __html: `${product.description}`*/}
-                                        {/*    }}/>*/}
-                                        {product.description}
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: `${product.description}`
+                                            }}/>
                                     </div>
                                 ) : ('')}
                             </Grid>
                             <Grid item md={6} xs={12}>
                                 <div>
                                     <div className={classes.flexStart}>
-                                        <Grid item md={3} xs={4}>
+                                        <div>
                                             <Typography
                                                 component="h1"
                                                 variant="h1"
@@ -154,20 +171,20 @@ const ProductScreen = ({product}) => {
                                                     {product.price} coм
                                                 </strong>
                                             </Typography>
-                                        </Grid>
-                                        <Grid item md={2} xs={4}>
+                                        </div>&nbsp;
+                                        <div>
                                             <Typography>
                                                 <del style={{color: "grey", fontSize: '18px'}}>
                                                     {product.price} coм
                                                 </del>
                                             </Typography>
-                                        </Grid>
+                                        </div>
                                     </div>
                                     <div className={classes.flexStart}>
-                                        <Grid item md={2} xs={4}>
+                                        <div>
                                             <Typography>Скидка:</Typography>
-                                        </Grid>
-                                        <Grid item md={2} xs={4}>
+                                        </div>&nbsp;
+                                        <div>
                                             {product.discount ? (
                                                 <Avatar
                                                     className={classes.globalColorYellow}
@@ -179,19 +196,19 @@ const ProductScreen = ({product}) => {
                                             ) : (
                                                 " "
                                             )}
-                                        </Grid>
+                                        </div>
                                     </div>
                                     <div className={classes.flexStart} style={{margin: '15px 0 10px 0'}}>
-                                        <Grid item md={2} xs={2}>
+                                        <div>
                                             <Typography>Цвет:</Typography>
-                                        </Grid>
-                                        <Grid item md={2} xs={1}>
+                                        </div>&nbsp;
+                                        <div>
                                             {currentProduct?.color ? (
                                                 <span className={classes.idProductColorSize}>
                                                     {currentProduct.color}
                                                 </span>
                                             ) : (" ")}
-                                        </Grid>
+                                        </div>
                                     </div>
                                     <div className={classes.flexStart}>
                                         {product.products.map((item, id) => (
@@ -223,11 +240,10 @@ const ProductScreen = ({product}) => {
                                         )}</Typography>
                                     </div>
                                     <div style={{marginBottom: 15}}>
-                                        <form className={classes.flexStart}>
+                                        <form className='idSizeContent'>
                                             {currentProduct?.sizes.map((itemSize,id) => (
                                                 <div key={id} className='form_radio_btn'>
                                                     <label
-                                                        key={id}
                                                         style={{
                                                             backgroundColor: size === itemSize.size ? "#0a0c0c" : null,
                                                             color: size === itemSize.size ? "#ffffff" : null
@@ -289,6 +305,7 @@ const ProductScreen = ({product}) => {
                                     </div>
                                 </div>
                             </Grid>
+
                             <div className={classes.idProdDescriptionsMd}>
                                 <h2 style={{color: 'gray', paddingTop: '-5px'}}>
                                     Описание
@@ -297,7 +314,70 @@ const ProductScreen = ({product}) => {
                             </div>
                         </Grid>
                         <div>
-                            <Typography component='h1' variant='h1'>С товаром рекомендуют</Typography>
+                            {recProducts ? (
+                                <>
+                                    <Typography component='h1' variant='h1'>С товаром рекомендуют</Typography>
+                                    <Grid container spacing={5}>
+                                        {recProducts.results.map(product => (
+                                            <Grid item md={3} sm={6} xs={12} key={product.id}>
+                                                <Card>
+                                                    <Link href={`/product/${product.id}`}>
+                                                        <CardActionArea className='productImage'>
+                                                            <CardMedia
+                                                                component="img"
+                                                                className={classes.productImage}
+                                                                image={product.image}
+                                                                title={product.title}
+                                                            />
+                                                            {product.discount ? (
+                                                                <span className={classes.productDiscount}>
+                                                           -{product.discount}%
+                                                        </span>
+                                                            ) : (
+                                                                " "
+                                                            )}
+                                                            <span className='willLook'>
+                                                        Посмотреть
+                                                    </span>
+                                                        </CardActionArea>
+                                                    </Link>
+                                                    <List style={{paddingBottom: 0}}>
+                                                        <ListItem className={classes.priceFavoriteIcon}>
+                                                            <Typography className={classes.productTitle}>
+                                                                {product.title}
+                                                            </Typography>
+                                                            <FavoriteBorderIcon
+                                                                onClick={() => dispatch(addToFavorite(product))}
+                                                                className={classes.favoriteBorderIconHover}
+                                                            />
+                                                        </ListItem>
+                                                        <ListItem>
+                                                            {product.discount_price ? (
+                                                                <div className={classes.flex}>
+                                                                    <Typography>
+                                                                        <strong>{product.discount_price} coм</strong>
+                                                                    </Typography>
+                                                                    <Typography>&nbsp;
+                                                                        <del style={{color: "grey", fontSize: '13px'}}>
+                                                                            {product.price} coм
+                                                                        </del>
+                                                                    </Typography>
+                                                                </div>
+                                                            ) : (
+                                                                <Typography>
+                                                                    <strong>
+                                                                        {product.price} coм
+                                                                    </strong>
+                                                                </Typography>
+                                                            )}
+                                                        </ListItem>
+                                                    </List>
+                                                </Card>
+                                            </Grid>
+                                        ))}
+                                    </Grid>
+                                </>
+                            ) : (null)}
                         </div>
                     </div>
                     <Comment item={product}/>

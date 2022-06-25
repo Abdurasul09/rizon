@@ -6,6 +6,7 @@ import RecentlyViewed from "../src/components/Common/RecentlyViewed";
 import CheckoutWizard from "../src/components/ChekoutWizard/ChekoutWizard";
 import useStyle from "../Utils/styles";
 import {Card} from "@material-ui/core";
+import Buttons from "../src/components/Common/Buttons";
 
 const Purchases = () => {
     const [purchases, setPurchases] = useState({})
@@ -37,6 +38,7 @@ const Purchases = () => {
 
     return (
         <Layout title="Покупки">
+            <Buttons/>
             <ProfilePages/>
             <div className="container">
                 <ul className="tab-list">

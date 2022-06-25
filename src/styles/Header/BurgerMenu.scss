@@ -16,8 +16,9 @@
     width: 100vw;
     height: 100vh;
     left: 20%;
-    backdrop-filter: brightness(75%);
+    backdrop-filter: blur(2px);
     position: absolute;
+    z-index: -1;
   }
 
   &__content {
@@ -109,7 +110,6 @@
       }
     }
     &__blur{
-      left: 100%;
       backdrop-filter: none;
     }
   }

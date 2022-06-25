@@ -13,6 +13,7 @@ import Name from "../src/components/Profile/name";
 import {AvatarCamera} from "../Utils/svg";
 import {useSnackbar} from "notistack";
 import {useRouter} from "next/router";
+import Buttons from "../src/components/Common/Buttons";
 
 const Profile = () => {
     const classes = useStyle();
@@ -104,10 +105,11 @@ const Profile = () => {
 
     return (
         <Layout title="Личные данные">
+            <Buttons/>
             <Grid>
                 <ProfilePages/>
                 <Grid>
-                    <Typography component="h4" variant="h4" pb={3}>
+                    <Typography component="h4" variant="h4" style={{paddingBottom: 4}}>
                         Личные данные
                     </Typography>
                     <Card item md={3} xs={12}>

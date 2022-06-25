@@ -85,6 +85,10 @@ $btnColor: #7582EBFF;
   color: white;
   cursor: pointer;
   margin-right: 5px;
+  border-radius: 4px;
+  &:hover{
+    background-color: #5364E7FF;
+  }
 }
 
 .btnFav {
@@ -97,4 +101,19 @@ $btnColor: #7582EBFF;
   background: none;
   color: #0a0c0c;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.idSizeContent{
+  display: flex;
+  align-items: center;
+}
+
+.idSizeContent::-webkit-scrollbar {
+  width: 0;
+}
+@media (max-width: 412px){
+  .idSizeContent{
+    overflow-x: scroll;
+  }
 }

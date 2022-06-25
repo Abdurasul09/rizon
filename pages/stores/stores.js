@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../../src/components/Layout";
-import Buttons from "../../src/components/Common/Buttons/Buttons";
+import Buttons from "../../src/components/Common/Buttons";
 import api from "../../api/globalApi";
 import {ListItem, Grid, Card, CardHeader} from "@material-ui/core";
 

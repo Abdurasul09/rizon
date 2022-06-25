@@ -23,22 +23,19 @@ const Advertising = () => {
             <div className="advertising__content">
                 <Slider {...settings}>
                     {abc.results?.map(el => (
-                        <div className="hover12 column" key={el.id}>
-                            <div>
-                                <figure>
-                                    <img
-                                        alt='banner image'
-                                        src={el.photo}
-                                    />
-                                </figure>
-                            </div>
+                        <div className="hover12" key={el.id}>
+                            <figure>
+                                <img
+                                    alt='banner image'
+                                    src={el.photo}
+                                />
+                            </figure>
                         </div>
-
                     ))}
                 </Slider>
             </div>
         </section>
-    );
+);
 };
 
 export default Advertising;

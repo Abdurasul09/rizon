@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../src/components/Layout";
-import Buttons from "../src/components/Common/Buttons/Buttons";
+import Buttons from "../src/components/Common/Buttons";
 import {List, ListItem, TextField, Typography} from "@material-ui/core";
 import {Controller, useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";

@@ -5,7 +5,7 @@ import {Button, CardActionArea,Card, CardActions, CardMedia, Grid, List, ListIte
 import NextLink from "next/link";
 import {addToCartHandler} from "../Utils/redux/actions/CartAction";
 import {useDispatch, useSelector} from "react-redux";
-import Buttons from "../src/components/Common/Buttons/Buttons";
+import Buttons from "../src/components/Common/Buttons";
 
 const Favorite = () => {
     const dispatch = useDispatch;

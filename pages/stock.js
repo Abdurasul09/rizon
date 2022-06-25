@@ -1,27 +1,38 @@
-import {
-    Card,
-    CardActionArea,
-    CardMedia, Grid, List, ListItem,
-    Typography,
-} from '@material-ui/core';
-import React from 'react';
-import Buttons from "./Common/Buttons";
+import React, {useEffect, useState} from 'react';
+import api from "../api/Api";
+import Layout from "../src/components/Layout";
+import Buttons from "../src/components/Common/Buttons";
+import {Card, CardActionArea, CardMedia, Grid, List, ListItem, Typography} from "@material-ui/core";
 import Link from "next/link";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import {addToFavorite} from "../../Utils/redux/actions/FavoriteAction";
-import useStyle from "../../Utils/styles";
+import {addToFavorite} from "../Utils/redux/actions/FavoriteAction";
+import useStyle from "../Utils/styles";
 import {useDispatch} from "react-redux";
 
-export default function ProductItem({product}) {
-    const classes = useStyle();
+const Stock = () => {
+    const [stock, setStock] = useState()
     const dispatch = useDispatch()
-    console.log(product)
+    const classes = useStyle();
+
+
+    const getStock = async () => {
+        try {
+            const res = await api.get(`/products?discount=${true}`)
+            setStock(res.data)
+        }catch (e){
+            console.log(e)
+        }
+    }
+    useEffect(()=>{
+        getStock()
+    },[])
+
     return (
-        <div>
+        <Layout title='Aкция'>
             <Buttons/>
-            <div>
+            {stock ? (
                 <Grid container spacing={5}>
-                    {product.map(product => (
+                    {stock.results.map(product => (
                         <Grid item md={3} sm={6} xs={12} key={product.id}>
                             <Card>
                                 <Link href={`/product/${product.id}`}>
@@ -79,8 +90,9 @@ export default function ProductItem({product}) {
                         </Grid>
                     ))}
                 </Grid>
-            </div>
-
-        </div>
+            ) : (null)}
+        </Layout>
     );
-}
+};
+
+export default Stock;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../src/components/Layout";
-import Buttons from "../src/components/Common/Buttons/Buttons";
+import Buttons from "../src/components/Common/Buttons";
 import {List, ListItem, Typography} from "@material-ui/core";
 import useStyle from "../Utils/styles";
 

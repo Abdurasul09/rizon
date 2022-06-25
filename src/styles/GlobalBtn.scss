@@ -9,6 +9,10 @@ $btnColor: #7582EBFF;
   color: white;
   cursor: pointer;
   margin: 5px 0;
+  border-radius: 5px;
+  &:hover{
+    background-color: #5364E7FF;
+  }
 }
 .btn{
   border: none;
@@ -19,4 +23,8 @@ $btnColor: #7582EBFF;
   color: white;
   cursor: pointer;
   margin: 5px 0;
+  border-radius: 5px;
+  &:hover{
+    background-color: #5364E7FF;
+  }
 }

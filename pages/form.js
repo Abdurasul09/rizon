@@ -4,7 +4,7 @@ import {Controller, useForm} from "react-hook-form";
 import Layout from "../src/components/Layout";
 import {useDispatch} from "react-redux";
 import {ActionType} from "../Utils/redux/actions/types";
-import Buttons from "../src/components/Common/Buttons/Buttons";
+import Buttons from "../src/components/Common/Buttons";
 import useStyle from "../Utils/styles";
 
 const Form = () => {

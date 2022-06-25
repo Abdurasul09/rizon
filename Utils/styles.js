@@ -37,6 +37,7 @@ const useStyle = makeStyles((theme) => ({
         },
     },
     globalText: {
+        marginTop: '2rem',
         fontWeight: '700',
         fontSize: '2rem',
         color: '#111827FF',
@@ -169,11 +170,11 @@ const useStyle = makeStyles((theme) => ({
     },
 
     navbarBtn: {
-        border:'none',
+        border: 'none',
         background: 'none',
         fontSize: '1rem',
         fontWeight: 'bold',
-        color:'white',
+        color: 'white',
         textTransform: "initial",
     },
     step: {
@@ -340,15 +341,20 @@ const useStyle = makeStyles((theme) => ({
         cursor: 'pointer'
     },
     proFileBtns: {
-        marginTop: "6rem",
-        marginBottom: '2rem'
+        margin: '1rem 0'
     },
     profileItems: {
-        paddingRight: '2rem',
+        paddingLeft: '1rem',
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         color: 'black',
+    },
+    profileItemsLink: {
+        color: 'black',
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
     },
     profileAvatar: {
         padding: '1rem',
@@ -446,7 +452,7 @@ const useStyle = makeStyles((theme) => ({
     flexCenter: {
         display: "flex",
         alignItems: "center",
-        justifyContent: "start"
+        justifyContent: "start",
     },
     flexStart: {
         display: "flex",
@@ -563,12 +569,20 @@ const useStyle = makeStyles((theme) => ({
         color: "gray",
         fontSize: "1.1rem"
     },
-    idProductStore:{
+    idProductStore: {
         marginTop: '1.5rem'
     },
-    idProductStoreArticle:{
+    idProductStoreArticle: {
         fontSize: '1rem',
         padding: '5px 0'
+    },
+    idSizeContent:{
+        width: '500px',
+        display: "flex",
+        alignItems: "center",
+        [theme.breakpoints.down('xs')]: {
+            padding: 0,
+        },
     },
 
     // marginTopGlobal

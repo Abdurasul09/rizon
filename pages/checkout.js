@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Layout from "../src/components/Layout";
-import Buttons from "../src/components/Common/Buttons/Buttons";
+import Buttons from "../src/components/Common/Buttons";
 import {Grid, List, TextField, Card, ListItem, Typography} from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
 import NextLink from 'next/link'

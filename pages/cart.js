@@ -15,7 +15,7 @@ import useStyle from "../Utils/styles";
 import {DecFromCart, DeleteFromCart, getCart, addToCartHandler} from "../Utils/redux/actions/CartAction";
 import {useDispatch, useSelector} from "react-redux";
 import SubTotal from "../src/components/Cart/SubTotal";
-import Buttons from "../src/components/Common/Buttons/Buttons";
+import Buttons from "../src/components/Common/Buttons";
 import {Delete, Minus, Plus} from "../Utils/svg";
 
 

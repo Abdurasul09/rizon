@@ -36,9 +36,9 @@ a{
  .container{
    padding: 0 40px;
  }
- //@media (max-width: 520px){
- //  .container{
- //    padding: 0 1px;
- //  }
- //}
+ @media (max-width: 412px){
+   .container{
+     padding: 0 20px;
+   }
+ }
 
