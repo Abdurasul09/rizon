@@ -1,0 +1,175 @@
+$white: rgb(160, 174, 192);
+$background: #000016;
+$hoverColor: #ffffff;
+.contact {
+  margin-top: 2rem;
+  background: $background;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #ffffff;
+  color: $white;
+
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr .8fr 0.8fr 1fr;
+    grid-gap: 20px;
+    align-items: start;
+    justify-content: space-between;
+
+    &__logo {
+      flex: 1;
+
+      &__text {
+        flex: 1;
+        padding-top: 15px;
+        font-size: 12px;
+        line-height: 19px;
+        color: $white;
+        &:hover {
+          color: $hoverColor;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__buyers {
+      padding: 0 10px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h3 {
+        padding-bottom: 15px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: $white;
+      }
+
+      h4 {
+        font-size: 15px;
+        padding: 3px 0;
+        font-weight: 300;
+        color: $white;
+        &:hover {
+          color: $hoverColor;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__shop {
+      flex: .8;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        padding-bottom: 15px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: $white;
+      }
+
+      h4 {
+        font-size: 15px;
+        padding: 3px 0;
+        font-weight: 300;
+        color: $white;
+        &:hover {
+          color: $hoverColor;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__sotSet {
+      flex: 1;
+
+      h3 {
+        padding-bottom: 10px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: $white
+      }
+
+      svg {
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        &:hover {
+          color: $hoverColor;
+          cursor: pointer;
+        }
+      }
+
+      &__sets {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__addressSection {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: $white;
+      }
+
+      &__address {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        p {
+          font-size: 12px;
+          padding: 10px 0 0 10px;
+          &:hover {
+            color: $hoverColor;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__phone {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+
+        svg {
+          margin-right: 8px;
+        }
+
+        p {
+          font-size: 14px;
+          color: $white;
+          &:hover {
+            color: $hoverColor;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .contact{
+    &__content{
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      &__buyers{
+        padding: 0;
+      }
+    }
+  }
+}

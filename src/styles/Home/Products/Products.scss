@@ -1,0 +1,11 @@
+.products{
+  &__text{
+    padding: 10px 0;
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+  &__contant{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

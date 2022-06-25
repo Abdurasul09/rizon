@@ -1,0 +1,100 @@
+$btnColor: #7582EBFF;
+.form_radio_btn {
+  display: inline-block;
+  margin-right: 10px;
+
+  label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 20px;
+    line-height: 34px;
+    border: 1px solid #0a0c0c;
+    user-select: none;
+    color: #0a0c0c;
+  }
+}
+
+.form_radio_btn input[type=radio] {
+  display: none;
+}
+
+
+.willLook {
+  position: absolute;
+  background-color: rgba(238, 238, 238, 0.82);
+  padding: 10px;
+  top: 150px;
+  right: 90px;
+  color: #333333;
+  font-size: 1em;
+  opacity: 0;
+  transition: .2s ease;
+}
+
+.productImage {
+  position: relative;
+  width: 100%;
+  height: 350px
+}
+
+.productImage:hover .willLook {
+  opacity: 1;
+}
+
+
+.hover figure {
+  height: 204px;
+  background: #000000;
+}
+
+.hover figure img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.hover figure:hover img {
+  opacity: .7;
+}
+
+
+.url {
+  width: 100%;
+  outline: none;
+  background: #eeeeee;
+  padding: 10px;
+  color: #2B3445;
+  border: none;
+  min-height: 60px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+// Buttons
+.btns{
+  margin: 5rem 0 1rem 0;
+}
+.btnCart {
+  border: none;
+  padding: 11px 15px;
+  font-size: 15px;
+  font-weight: 400;
+  background: $btnColor;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btnFav {
+  display: flex;
+  align-items: center;
+  border: 1px solid #0A0C0CFF;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 400;
+  background: none;
+  color: #0a0c0c;
+  cursor: pointer;
+}

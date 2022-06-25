@@ -1,0 +1,27 @@
+.viewed_product {
+  margin-top: 4rem;
+  &_content {
+    position: relative;
+    .slick-list {
+      overflow: hidden;
+
+      .slick-track {
+        display: flex;
+        width: 97%;
+      }
+    }
+    .slick-prev {
+      position: absolute;
+      z-index: 10;
+      top: 150px;
+    }
+    .slick-next {
+      position: absolute;
+      z-index: 10;
+      top: 150px;
+      right: 0;
+    }
+  }
+}
+
+

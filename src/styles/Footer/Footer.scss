@@ -1,0 +1,22 @@
+$backgroundFooter: #000016;
+$textColor: rgb(160, 174, 192);
+.footer{
+  padding: 20px 0;
+  background: $backgroundFooter;
+  color: $textColor;
+
+  span {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  p {
+    padding-top: 5px;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+  svg{
+    font-size: 19px;
+  }
+}

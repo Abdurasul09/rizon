@@ -1,0 +1,117 @@
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 64px;
+  z-index: 999;
+  transform: translateX(-130%);
+  transition: all .4s ease;
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  &__blur {
+    width: 100vw;
+    height: 100vh;
+    left: 20%;
+    backdrop-filter: brightness(75%);
+    position: absolute;
+  }
+
+  &__content {
+    width: 20%;
+    height: 100%;
+    padding-top: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    z-index: 999;
+
+    .side {
+      width: 100%;
+      position: relative;
+      list-style: none;
+      margin: 0;
+
+      .menu__list {
+        position: relative;
+        &:hover .menu__drop {
+          display: inline-block;
+          position: fixed;
+        }
+        a{
+          font-size: 14px;
+          color: #2B3445;
+          font-weight: 400;
+          line-height: 1.5;
+        }
+
+        img{
+          width: 1.5em;
+          height: 1.5em;
+          object-fit: contain;
+          margin-left: 15px;
+        }
+      }
+
+      .menu__drop {
+        background-color: #ffffff;
+        position: absolute;
+        width: 70%;
+        height: 80vh;
+        left: 256px;
+        top: 0;
+        display: none;
+        transition: .3s opacity;
+        border-left: 7px solid rgba(157, 157, 157, 0.70);
+        li{
+          padding: 5px 0 0 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: start;
+        }
+        img{
+          margin: 0;
+          width: 300px;
+          height: 450px;
+          object-fit: contain;
+        }
+
+        a {
+          text-decoration: none;
+          color: #2B3445;
+          padding-top: 5px;
+          &:hover{
+            border-bottom: 1px solid grey;
+          }
+        }
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 414px) {
+  .menu {
+    top: 55px;
+    &__content{
+      width: 100% !important;
+      .menu__drop{
+        border-left: none;
+      }
+    }
+    &__blur{
+      left: 100%;
+      backdrop-filter: none;
+    }
+  }
+}
+

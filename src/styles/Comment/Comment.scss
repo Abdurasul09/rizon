@@ -1,0 +1,47 @@
+$btnColor: #7582EBFF;
+$textColor: #ffffff;
+.input-file {
+  position:relative;
+  overflow:hidden;
+  padding: 8.2px;
+  font-size:  15px;
+  display:block;
+  max-width:100%;
+  cursor:pointer;
+  background: $btnColor;
+  color: $textColor;
+}
+.input-file:after {
+  content:"";
+  display:block; clear:both;
+}
+.input-file input {
+  width:0.1px;
+  height:0.1px;
+  opacity:0;
+  overflow:hidden;
+  position:absolute;
+  top:-100px;
+  z-index:-1;
+}
+
+.input__file__camera{
+  overflow:hidden;
+  font-size:  15px;
+  display:block;
+  max-width:100%;
+  cursor:pointer;
+}
+
+.input__file__camera:after {
+  content:"";
+  display:block; clear:both;
+}
+.input__file__camera input {
+  width:0.1px;
+  height:0.1px;
+  opacity:0;
+  overflow:hidden;
+  top:-100px;
+  z-index:-1;
+}

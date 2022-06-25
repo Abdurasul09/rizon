@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Inter:wght@200;300;400;500;600;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+@import "Header/Header";
+@import "Home/Categories/Categories";
+@import "Home/Products/Products";
+@import "Home/Advertising/Advartising";
+@import "Home/Shop/Shop";
+@import "Header/BurgerMenu";
+@import 'Footer/Footer';
+@import 'Footer/Contact';
+@import "Home/Products/Cart/Cart";
+@import "Home/Products/Cart/MyTable";
+@import "productId";
+@import "Modal";
+@import "locationCart";
+@import "GlobalBtn";
+@import "Comment/Comment";
+@import "Profile/Purchases";
+@import "Сarusel/Carusel";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  transition: all .5s;
+}
+a{
+  text-decoration: none;
+  margin: 0 !important;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,94 @@
+$btnColor: #7582EBFF;
+.location{
+  div{
+    width: 300px;
+    .ymaps-2-1-79-map{
+      width: 300px;
+      .ymaps-2-1-79-i-ua_js_yes{
+        width: 450px !important;
+        height: 400px !important;
+      }
+    }
+  }
+}
+
+.payWithCart{
+  border: 1px solid black;
+  transition: .2s all;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+.payWithCart input[type=radio] {
+  display: none;
+}
+
+.none{
+  display: none;
+}
+.block{
+  display: block;
+}
+
+.free input[type=radio] {
+  display: none;
+}
+.paid input[type=radio] {
+  display: none;
+}
+
+.phone{
+  -webkit-appearance: none;
+  border-bottom: 1px solid #808080FF;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-family: inherit;
+  padding: 10px;
+  font-size: 16px;
+  background: none;
+  border-radius: 0;
+  outline:none;
+}
+
+.deliverFree{
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  width: 82%;
+}
+
+.checkBtn{
+  padding: 10px;
+  font-size:  15px;
+  font-weight: 400;
+  border: 1px solid #7582EBFF;
+  color: white;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.spanPayCart{
+  cursor: pointer;
+  font-size: 12px;
+}
+
+//@media (max-width: 900px) {
+//  .deliverFree{
+//    width: 19%;
+//  }
+//}
+@media (max-width: 414px) {
+  .deliverFree{
+    width: 100%;
+  }
+}
+
+@media (max-width: 414px) {
+  .checkboxPaymentCart{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

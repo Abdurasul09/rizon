@@ -1,0 +1,146 @@
+
+.advertising {
+  //background: #ffffff;
+  margin-top: 5.5em;
+
+  &__content {
+    .hover12 figure {
+      background: #000000;
+    }
+
+    .hover12 figure img {
+      opacity: 1;
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+    }
+
+    .hover12 figure:hover img {
+      opacity: .7;
+    }
+
+    .slick-slider {
+      border-radius: 10px;
+
+      .slick-next {
+        position: absolute !important;
+        right: 80px !important;
+        font-size: 0 !important;
+        width: 40px !important;
+        top: 240px;
+        height: 40px !important;
+        border-radius: 60px;
+        background-image: url("../../../../public/images/next.png");
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-position: center;
+        border: none;
+        cursor: pointer;
+      }
+
+
+      .slick-prev {
+        position: absolute !important;
+        font-size: 0 !important;
+        width: 40px !important;
+        height: 40px !important;
+        left: 80px !important;
+        background-image: url("../../../../public/images/Arrow 1.png");
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-position: center;
+
+        top: 230px;
+        border-radius: 60px;
+        border: none;
+        z-index: 888;
+        cursor: pointer;
+      }
+
+
+      .slick-list {
+        overflow: hidden;
+        height: 40vh;
+        z-index: 999 !important;
+
+        .slick-track {
+          display: flex;
+          z-index: 887 !important;
+
+
+          .slick-slide {
+            div {
+              height: 0;
+
+              img {
+                z-index: 0;
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+    &__img {
+      margin-top: 10px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1280px) {
+  .advertising {
+    &__content {
+      .hover12 {
+        figure {
+          height: 295px;
+        }
+      }
+
+      .slick-slider {
+
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 540px) {
+  .advertising {
+    &__content {
+      .slick-slider {
+        .slick-next {
+          top: 180px;
+          right: 40px !important;
+        }
+
+        .slick-prev {
+          top: 180px;
+          left: 40px !important;
+        }
+
+        .slick-list {
+          height: 200px !important;
+          .slick-track {
+            .slick-slide {
+              div {
+                img {
+                  height: 200px;
+                  width: 400px;
+                  object-fit: cover;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
