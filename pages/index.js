@@ -117,7 +117,7 @@ const Home = ({products}) => {
 }
 
 export default Home;
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const res = await api(`/products`)
     const products = await res.data.results
     return {props: {products}}
