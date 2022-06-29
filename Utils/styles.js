@@ -37,7 +37,6 @@ const useStyle = makeStyles((theme) => ({
         },
     },
     globalText: {
-        marginTop: '2rem',
         fontWeight: '700',
         fontSize: '2rem',
         color: '#111827FF',
